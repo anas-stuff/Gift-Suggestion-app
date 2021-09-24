@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private ImageView giftImageView;
 
-    private final Gift[] mGifts = new Gift[10];
+    private Gift[] mGifts = new Gift[10];
     private int currentIndex = -1;
 
     @Override
@@ -38,40 +38,28 @@ public class MainActivity extends AppCompatActivity {
 
         mRandom = new Random();
 
-        for(int i=0; i < mGifts.length; i++)
-            mGifts[i] = new Gift();
-
-        // Gift 1
-        mGifts[0].setName(R.string.damask_rose);
-        mGifts[0].setPicture(R.drawable.gift_1);
-        // Gift 2
-        mGifts[1].setName(R.string.flower);
-        mGifts[1].setPicture(R.drawable.gift_2);
-        // Gift 3
-        mGifts[2].setName(R.string.cake);
-        mGifts[2].setPicture(R.drawable.gift_3);
-        // Gift 4
-        mGifts[3].setName(R.string.laptop);
-        mGifts[3].setPicture(R.drawable.gift_4);
-        // Gift 5
-        mGifts[4].setName(R.string.mobile);
-        mGifts[4].setPicture(R.drawable.gift_5);
-        // Gift 6
-        mGifts[5].setName(R.string.book);
-        mGifts[5].setPicture(R.drawable.gift_6);
-        // Gift 7
-        mGifts[6].setName(R.string.piece_of_cake);
-        mGifts[6].setPicture(R.drawable.gift_7);
-        // Gift 8
-        mGifts[7].setName(R.string.shirt);
-        mGifts[7].setPicture(R.drawable.gift_8);
-        // Gift 9
-        mGifts[8].setName(R.string.shoe);
-        mGifts[8].setPicture(R.drawable.gift_9);
-        // Gift 10
-        mGifts[9].setName(R.string.diamond);
-        mGifts[9].setPicture(R.drawable.gift_10);
-
+        mGifts = new Gift[] {
+                // Gift 1
+                new Gift(R.string.damask_rose, R.drawable.gift_1),
+                // Gift 2
+                new Gift(R.string.flower, R.drawable.gift_2),
+                // Gift 3
+                new Gift(R.string.cake, R.drawable.gift_3),
+                // Gift 4
+                new Gift(R.string.laptop, R.drawable.gift_4),
+                // Gift 5
+                new Gift(R.string.mobile, R.drawable.gift_5),
+                // Gift 6
+                new Gift(R.string.book, R.drawable.gift_6),
+                // Gift 7
+                new Gift(R.string.piece_of_cake, R.drawable.gift_7),
+                // Gift 8
+                new Gift(R.string.shirt, R.drawable.gift_8),
+                // Gift 9
+                new Gift(R.string.shoe, R.drawable.gift_9),
+                // Gift 10
+                new Gift(R.string.diamond, R.drawable.gift_10)
+        };
 
         Log.i(TAG, "Created");
     }
