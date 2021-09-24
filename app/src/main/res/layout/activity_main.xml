@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:orientation="vertical">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_gift_name"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textSize="28sp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textAlignment="gravity"
+            android:textStyle="bold"
+            tools:text="تجربة نص" />
+
+    <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="16dp"
+            android:src="@drawable/gift"
+            android:id="@+id/image_gift"/>
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/suggest_gift"
+            android:textSize="18sp"
+            android:padding="16dp"
+            android:backgroundTint="@color/colorAccent"
+            android:textColor="@android:color/white"
+            android:onClick="display"/>
+
+</LinearLayout>
