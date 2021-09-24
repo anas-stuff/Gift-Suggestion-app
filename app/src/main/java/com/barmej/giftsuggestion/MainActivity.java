@@ -23,19 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private ImageView giftImageView;
 
-    private final int[][] giftImages = {
-            {R.drawable.gift_1, R.string.damask_rose},
-            {R.drawable.gift_2, R.string.flower},
-            {R.drawable.gift_3, R.string.cake},
-            {R.drawable.gift_4, R.string.laptop},
-            {R.drawable.gift_5, R.string.mobile},
-            {R.drawable.gift_6, R.string.book},
-            {R.drawable.gift_7, R.string.piece_of_cake},
-            {R.drawable.gift_8, R.string.shirt},
-            {R.drawable.gift_9, R.string.shoe},
-            {R.drawable.gift_10, R.string.diamond}
-
-    };
+    private final Gift[] mGifts = new Gift[10];
     private int currentIndex = -1;
 
     @Override
@@ -49,6 +37,42 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.text_gift_name);
 
         mRandom = new Random();
+
+        for(int i=0; i < mGifts.length; i++)
+            mGifts[i] = new Gift();
+
+        // Gift 1
+        mGifts[0].setName(R.string.damask_rose);
+        mGifts[0].setPicture(R.drawable.gift_1);
+        // Gift 2
+        mGifts[1].setName(R.string.flower);
+        mGifts[1].setPicture(R.drawable.gift_2);
+        // Gift 3
+        mGifts[2].setName(R.string.cake);
+        mGifts[2].setPicture(R.drawable.gift_3);
+        // Gift 4
+        mGifts[3].setName(R.string.laptop);
+        mGifts[3].setPicture(R.drawable.gift_4);
+        // Gift 5
+        mGifts[4].setName(R.string.mobile);
+        mGifts[4].setPicture(R.drawable.gift_5);
+        // Gift 6
+        mGifts[5].setName(R.string.book);
+        mGifts[5].setPicture(R.drawable.gift_6);
+        // Gift 7
+        mGifts[6].setName(R.string.piece_of_cake);
+        mGifts[6].setPicture(R.drawable.gift_7);
+        // Gift 8
+        mGifts[7].setName(R.string.shirt);
+        mGifts[7].setPicture(R.drawable.gift_8);
+        // Gift 9
+        mGifts[8].setName(R.string.shoe);
+        mGifts[8].setPicture(R.drawable.gift_9);
+        // Gift 10
+        mGifts[9].setName(R.string.diamond);
+        mGifts[9].setPicture(R.drawable.gift_10);
+
+
         Log.i(TAG, "Created");
     }
 
@@ -80,12 +104,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     private void showImage(){
-        Drawable giftDrawable = ContextCompat.getDrawable(this, giftImages[currentIndex][0]);
+        Drawable giftDrawable = ContextCompat.getDrawable(this, mGifts[currentIndex].getPicture());
         giftImageView.setImageDrawable(giftDrawable);
     }
 
     private void showGiftName(){
-        textView.setText(giftImages[currentIndex][1]);
+        textView.setText(mGifts[currentIndex].getName());
     }
 
     @Override
